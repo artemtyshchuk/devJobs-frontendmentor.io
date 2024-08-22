@@ -1,0 +1,18 @@
+body[data-theme="dark"] {
+  background-color: #121721;
+
+  transition: 0.3s;
+}
+
+body[data-theme="light"] {
+  background-color: #f4f6f8;
+  transition: 0.3s;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
