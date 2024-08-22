@@ -1,0 +1,10 @@
+.header {
+  padding-top: 45px;
+  background-color: #5964e0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}

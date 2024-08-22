@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should render Container with children 1`] = `
+<div
+  class="headerImage"
+  data-testid="headerImage"
+/>
+`;
