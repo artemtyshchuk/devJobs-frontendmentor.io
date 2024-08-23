@@ -1,0 +1,331 @@
+:global {
+  body[data-theme="light"] {
+    --search-field-color: #ffff;
+    --search-field-input-color: #ffff;
+    --search-field-checkbox-label-color: #19202d;
+    --search-field-checkboxpointer-color: #19202d;
+    --search-field-input-text-color: #19202d;
+    --divider-color: #6e8098;
+    --icon-filter: #6e8098;
+  }
+  body[data-theme="dark"] {
+    --search-field-color: #19202d;
+    --search-field-input-color: #19202d;
+    --search-field-input-text-color: #ffff;
+
+    --search-field-checkbox-label-color: #ffff;
+    --search-field-checkboxpointer-color: #ffff;
+    --icon-filter: #ffff;
+  }
+}
+.searchField {
+  display: grid;
+  grid-template-columns: 40% 31% 26%;
+  column-gap: 23px;
+  align-items: center;
+  border-radius: 6px;
+  padding-left: 28px;
+  padding-right: 16px;
+  background-color: var(--search-field-color);
+}
+
+.searchFieldInputWrapper {
+  display: grid;
+  column-gap: 26px;
+  padding: 28px 0;
+  border-right: 1px solid #0000002a;
+}
+
+.searchFieldInput {
+  width: calc(100% - 48px);
+  border: none;
+  outline: none;
+  margin-left: 16px;
+
+  background-color: var(--search-field-input-color);
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--search-field-input-text-color);
+}
+
+.searchFieldLabel {
+  display: flex;
+}
+
+.searchFieldCheckboxLabel {
+  color: var(--search-field-checkbox-label-color);
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.checkboxContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  column-gap: 0;
+}
+
+.searchFieldInputCheckboxIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.1035;
+  background: var(--search-field-checkboxpointer-color);
+  cursor: pointer;
+}
+
+.searchFieldInputCheckboxIconChecked {
+  background: #5964e0;
+  opacity: 1;
+}
+
+.searchFieldInputCheckboxInput {
+  display: none;
+}
+
+.searchButton {
+  margin-left: 26px;
+  width: 123px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #5964e0;
+  border: none;
+
+  color: #fff;
+  text-align: center;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.iconFilter {
+  path {
+    fill: var(--icon-filter);
+  }
+}
+
+@media (max-width: 1439px) {
+  //1201
+  .searchField {
+    grid-template-columns: 36% 27% 33%;
+  }
+}
+
+@media (max-width: 1200px) {
+  //993
+  .searchField {
+    display: grid;
+    grid-template-columns: 43% 25% 28%;
+    column-gap: 16px;
+  }
+  .searchFieldCheckboxLabel {
+    justify-content: center;
+    text-align: center;
+  }
+  .searchButton {
+    margin: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  //769
+  .searchField {
+    grid-template-columns: 27% 32% 35%;
+  }
+
+  .searchButton {
+    width: 80px;
+    height: 48px;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 768px) {
+  //577
+  .searchField {
+    grid-template-columns: 33% 40% 26%;
+
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .searchField {
+    column-gap: 8px;
+  }
+
+  .searchFieldInput {
+    width: 79%;
+  }
+  .checkboxContainer {
+    grid-template-columns: auto auto;
+
+    justify-content: space-around;
+  }
+  .searchFieldInput {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .searchField {
+    grid-template-columns: 50% 50%;
+
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .searchButtonIconSearch {
+    path {
+      fill: white;
+    }
+  }
+
+  .searchFieldInputWrapper {
+    border-right: none;
+  }
+
+  .checkboxContainer {
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+
+  .searchFieldInput {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .searchButton {
+    width: 48px;
+    height: 48px;
+    justify-self: end;
+  }
+}
+
+.modal_SearchFieldModal {
+  background: #00000046;
+  z-index: 10000;
+  height: 100vh;
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  place-items: center;
+  padding: 0 24px;
+}
+
+.modal_SearchFieldModalConteiner {
+  display: grid;
+  position: relative;
+  bottom: 15%;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 21px;
+  background: var(--search-field-color);
+  width: 80%;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.modal_searchFieldInputWrapper {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.modal_checkboxFieldInputWrapper {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  align-items: center;
+  column-gap: 8px;
+  padding-top: 24px;
+  border-top: 1px solid #00000021;
+}
+
+.modal_searchFieldLabel {
+  justify-self: center;
+}
+
+.modal_searchFieldInput {
+  border: none;
+  outline: none;
+  background-color: var(--search-field-input-color);
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--search-field-input-text-color);
+}
+
+.modal_searchFieldInputWrapper {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.modal_searchFieldInputCheckboxInput {
+  display: none;
+}
+
+.modal_searchFieldInputCheckboxIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.1035;
+  background: var(--search-field-checkboxpointer-color);
+  cursor: pointer;
+}
+
+.modal_searchFieldInputCheckboxIconChecked {
+  background: #5964e0;
+  opacity: 1;
+}
+
+.modal_searchFieldCheckboxLabel {
+  color: var(--search-field-checkbox-label-color);
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.modal_searchButton {
+  width: 100%;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #5964e0;
+  border: none;
+
+  color: #fff;
+  text-align: center;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
