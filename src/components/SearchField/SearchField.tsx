@@ -33,6 +33,7 @@ export const SearchField = ({}: SearchFieldProps) => {
           <input
             type="text"
             name="searchByTitle"
+            autoComplete="off"
             className={styles.searchFieldInput}
             placeholder={
               tabletScreen
@@ -48,6 +49,7 @@ export const SearchField = ({}: SearchFieldProps) => {
             <IconLocation />
             <input
               type="text"
+              autoComplete="off"
               name="searchByLocation"
               className={styles.searchFieldInput}
               placeholder="Filter by location…"
@@ -75,6 +77,7 @@ export const SearchField = ({}: SearchFieldProps) => {
               <input
                 type="checkbox"
                 checked={checkbox}
+                autoComplete="off"
                 name="fullTimeCheckbox"
                 onChange={() => setCheckbox((prevState) => !prevState)}
                 className={styles.searchFieldInputCheckboxInput}
