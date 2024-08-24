@@ -27,6 +27,7 @@ export const SearchFieldModal = () => {
           <input
             type="text"
             name="searchByLocation"
+            autoComplete="off"
             className={styles.modal_searchFieldInput}
             placeholder="Filter by location…"
           />
