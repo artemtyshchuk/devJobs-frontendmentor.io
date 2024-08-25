@@ -26,7 +26,7 @@ export const SearchField = ({}: SearchFieldProps) => {
   };
 
   return (
-    <div className={styles.searchField} data-testid="searchField">
+    <form className={styles.searchField} data-testid="searchField">
       <div className={styles.searchFieldInputWrapper}>
         <label className={styles.searchFieldLabel}>
           {smallMobileScreen ? null : <IconSearch />}
@@ -96,6 +96,6 @@ export const SearchField = ({}: SearchFieldProps) => {
         </button>
       </div>
       {filtersModal === "open" && <SearchFieldModal />}
-    </div>
+    </form>
   );
 };

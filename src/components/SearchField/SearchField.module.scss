@@ -27,6 +27,7 @@
   padding-left: 28px;
   padding-right: 16px;
   background-color: var(--search-field-color);
+  transition: 0.3s;
 }
 
 .searchFieldInputWrapper {
@@ -49,6 +50,7 @@
   font-weight: 400;
   line-height: normal;
   color: var(--search-field-input-text-color);
+  transition: 0.3s;
 }
 
 .searchFieldLabel {
@@ -82,6 +84,10 @@
   opacity: 0.1035;
   background: var(--search-field-checkboxpointer-color);
   cursor: pointer;
+  &:hover {
+    opacity: 0.25;
+    background: #5964e0;
+  }
 }
 
 .searchFieldInputCheckboxIconChecked {
@@ -110,6 +116,10 @@
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
+
+  &:hover {
+    background: #939bf4;
+  }
 }
 
 .iconFilter {
