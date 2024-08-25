@@ -1,0 +1,98 @@
+:global {
+  body[data-theme="light"] {
+    --vacancyComponent-color: #ffff;
+    --positionText-color: #19202d;
+  }
+
+  body[data-theme="dark"] {
+    --vacancyComponent-color: #19202d;
+    --positionText-color: #fff;
+  }
+}
+
+.vacancyComponent {
+  border-radius: 6px;
+  background: var(--vacancyComponent-color);
+  padding: 49px 0 36px 32px;
+  display: grid;
+  position: relative;
+  transition: 0.3s;
+}
+
+.logoBackground {
+  position: absolute;
+  top: -26px;
+  left: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 15px;
+}
+
+.vacancyComponent_header {
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.headerText {
+  margin: 0;
+  color: #6e8098;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.positionWrapper {
+  grid-row: 2/3;
+}
+
+.position {
+  margin: 16px 0;
+  color: var(--positionText-color);
+  font-family: "Kumbh Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  &:hover {
+    color: #6e8098;
+    transition: 0.4s;
+  }
+}
+
+.companyWrapper {
+  grid-row: 3/4;
+}
+
+.company {
+  margin: 0;
+  color: #6e8098;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.locationWrapper {
+  grid-row: 4/5;
+}
+
+.location {
+  margin: 0;
+  padding-top: 44px;
+  color: #5964e0;
+  font-family: "Kumbh Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
