@@ -18,6 +18,8 @@ export const SearchField = ({}: SearchFieldProps) => {
 
   const [checkbox, setCheckbox] = useState<boolean>(false);
 
+  const checkboxValue = checkbox ? "Full Time" : "Part Time";
+
   const dispatch = useAppDispatch();
   const filtersModal = useAppSelector((state) => state.filtersModal);
 

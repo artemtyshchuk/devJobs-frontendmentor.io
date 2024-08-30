@@ -7,7 +7,7 @@ interface ThemeSwitcherProps {}
 
 export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
   const [theme, setTheme] = useState<boolean>(
-    localStorage.getItem("theme") === "light"
+    localStorage.getItem("theme") === "dark"
   );
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
   }, [theme]);
 
   const handleTheme = () => {
-    setTheme(!theme);
+    setTheme((prevTheme) => !prevTheme);
   };
 
   return (
