@@ -16,6 +16,7 @@
 }
 
 .loadMoreButton {
+  margin-bottom: 104px;
   width: 141px;
   height: 48px;
   flex-shrink: 0;
@@ -59,6 +60,9 @@
 }
 
 @media (max-width: 768px) {
+  .loadMoreButton {
+    margin-bottom: 40px;
+  }
   //577
 }
 

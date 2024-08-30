@@ -1,14 +1,3 @@
-type GeneralFiltersTypes = {
-  company?: string;
-  position?: string;
-  location?: string;
-  description?: string;
-  requirements?: {
-    content: string;
-    items: string[];
-  };
-};
-
 type VacancyRequirements = {
   content: string;
   items: string[];
@@ -17,6 +6,13 @@ type VacancyRequirements = {
 type VacancyRole = {
   content: string;
   items: string[];
+};
+
+export type GeneralFiltersTypes = {
+  company?: string;
+  position?: string;
+  location?: string;
+  description?: string;
 };
 
 export type SearchFieldTypes = {

@@ -1,10 +1,12 @@
 import { VacancyType } from "types";
 import styles from "./VacancyComponent.module.scss";
+import { Link } from "react-router-dom";
 
 interface VacancyComponentProps extends VacancyType {}
 
 export const VacancyComponent = (props: VacancyComponentProps) => {
   const {
+    id,
     company,
     logo,
     logoBackground,
@@ -28,7 +30,13 @@ export const VacancyComponent = (props: VacancyComponentProps) => {
         <p className={styles.headerText}>{contract}</p>
       </div>
       <div className={styles.positionWrapper}>
-        <p className={styles.position}>{position}</p>
+        <Link
+          key={`${id}`}
+          to={`/section/${id}`}
+          style={{ textDecoration: "none" }}
+        >
+          <div className={styles.position}>{position}</div>
+        </Link>
       </div>
       <div className={styles.companyWrapper}>
         <p className={styles.company}>{company}</p>

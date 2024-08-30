@@ -1,0 +1,348 @@
+:global {
+  body[data-theme="light"] {
+    --header-bg-color: #ffff;
+    --header-title-color: #19202d;
+  }
+  body[data-theme="dark"] {
+    --header-bg-color: #19202d;
+    --header-title-color: #ffff;
+  }
+}
+
+.companyHeader {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr;
+  padding-right: 43px;
+  column-gap: 40px;
+  height: 140px;
+  justify-content: center;
+  background-color: var(--header-bg-color);
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.companyHeader_logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px 0 0 6px;
+}
+
+.companyHeader_companyInfoContainer {
+  align-self: center;
+}
+
+.companyHeader_companyName {
+  color: var(--header-title-color);
+  font-family: "Kumbh Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.companyHeader_companyWebsite {
+  color: #6e8098;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding-top: 13px;
+}
+
+.companyHeader_companySiteContainer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.companyHeader_companySiteButton {
+  border: none;
+  border-radius: 5px;
+  width: 147px;
+  height: 48px;
+  background-color: #5964e01f;
+
+  color: #5964e0;
+  text-align: center;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  &:hover {
+    background-color: #5964e03a;
+  }
+}
+
+.vacancyDescription_container {
+  margin-top: 32px;
+  margin-bottom: 30px;
+  background-color: var(--header-bg-color);
+  padding: 48px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.vacancyDescription_header_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 44px;
+}
+
+.vacancyDescription_header_subInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.vacancyDescription_header_subInfo_text {
+  margin: 0;
+  color: #6e8098;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.vacancyDescription_header_position {
+  padding-top: 11px;
+  margin: 0;
+  color: var(--header-title-color);
+  font-family: "Kumbh Sans";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.vacancyDescription_header_location {
+  padding-top: 14px;
+  margin: 0;
+  color: #5964e0;
+  font-family: "Kumbh Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.vacancyDescription_buttonContainer {
+  display: grid;
+  justify-self: end;
+  align-items: center;
+}
+
+.vacancyDescription_button {
+  border: none;
+  border-radius: 5px;
+  background: #5964e0;
+  min-width: 141px;
+  width: 100%;
+  height: 48px;
+
+  color: #fff;
+  text-align: center;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  &:hover {
+    background-color: #939bf4;
+  }
+}
+
+.vacancyDescription_description {
+  color: #6e8098;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
+.vacancyDescription_description_list {
+  color: #6e8098;
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+  padding-left: 37px;
+  text-indent: -23px;
+  list-style-position: inside;
+  &::marker {
+    color: #5964e0;
+  }
+}
+
+.vacancyDescription_title {
+  margin-top: 40px;
+  margin-bottom: 28px;
+
+  color: var(--header-title-color);
+  font-family: "Kumbh Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.indexNumber {
+  color: #5964e0;
+  font-family: "Kumbh Sans";
+  font-weight: bold;
+  margin-right: 13px;
+}
+
+.companyFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 23px;
+  background-color: var(--header-bg-color);
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.companyFooter_content {
+  margin: 0 auto;
+  width: 57%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.companyFooter_applyButton {
+  justify-self: end;
+  align-self: center;
+}
+
+.vacancyPage {
+  margin: 0 auto;
+  width: 70%;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 1439px) {
+  //1201
+}
+
+@media (max-width: 1200px) {
+  //993
+  .vacancyPage {
+    width: 90%;
+  }
+  .companyFooter_content {
+    width: 77%;
+  }
+}
+
+@media (max-width: 992px) {
+  //769
+  .vacancyPage {
+    width: 100%;
+  }
+  .companyFooter_content {
+    width: 86%;
+  }
+}
+
+@media (max-width: 768px) {
+  //577
+
+  .companyHeader {
+    column-gap: 20px;
+    grid-template-columns: 70px 1fr 1fr;
+    height: 100px;
+    padding-right: 20px;
+  }
+
+  .companyFooter_content {
+    margin: 0 auto;
+    width: 59%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+
+  .companyFooter_content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .companyHeader {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 205px;
+    padding-right: 0;
+    justify-items: center;
+  }
+  .companyHeader_logoContainer {
+    position: absolute;
+    top: 100px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 16px;
+  }
+
+  .companyHeader_companyInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .companyHeader_companyName {
+    padding-top: 50px;
+  }
+
+  .companyHeader_companySiteButton {
+    margin-top: 24px;
+  }
+
+  .vacancyDescription_container {
+    padding: 24px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+  .vacancyDescription_header_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 32px;
+  }
+  .vacancyDescription_header_position {
+    font-size: 20px;
+  }
+  .vacancyDescription_buttonContainer {
+    display: grid;
+    justify-self: normal;
+    align-items: end;
+  }
+
+  .companyFooter {
+    box-sizing: border-box;
+  }
+
+  .companyFooter_content {
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .companyFooter_applyButton {
+    justify-self: normal;
+    align-self: normal;
+  }
+}
