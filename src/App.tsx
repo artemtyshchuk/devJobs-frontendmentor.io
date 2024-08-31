@@ -1,8 +1,8 @@
 import { Container } from "components/Container";
 import { Header } from "components/Header";
 import { NotFound } from "components/NotFound";
-import { HomePage } from "components/pages/HomePage";
-import { VacancyPage } from "components/pages/VacancyPage";
+import { HomePage } from "pages/HomePage";
+import { VacancyPage } from "pages/VacancyPage";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Layout = () => {

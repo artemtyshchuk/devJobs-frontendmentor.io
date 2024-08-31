@@ -1,33 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./VacanciesList.module.scss";
-import { VacancyType } from "types";
 import { VacancyComponent } from "components/VacancyComponent";
+import { useFetch } from "hooks/useFetch";
 
 interface VacanciesListProps {}
 
 export const VacanciesList = ({}: VacanciesListProps) => {
-  const [vacanciesList, setVacanciesList] = useState<VacancyType[]>([]);
+  const { data: vacanciesList } = useFetch();
   const [visibleCount, setVisibleCount] = useState<number>(12);
-
-  const fetchVacanciesList = async () => {
-    try {
-      const response = await fetch("data.json");
-      const dataJson = (await response.json()) as VacancyType[];
-      setVacanciesList(dataJson);
-    } catch (error) {
-      if (error instanceof Error) {
-        console.log(error.message);
-      }
-    }
-  };
 
   const handleLoadMoreButton = () => {
     setVisibleCount((prevState) => prevState + 12);
   };
-
-  useEffect(() => {
-    fetchVacanciesList();
-  }, []);
 
   return (
     <div className={styles.vacanciesList}>

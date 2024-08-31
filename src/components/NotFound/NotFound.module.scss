@@ -1,1 +1,29 @@
-.notFound {}
+.notFound {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Это важно, чтобы изображение не выходило за пределы экрана */
+  background-color: #5964e0;
+  display: flex;
+}
+
+.image {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+
+.textWrapper {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.text {
+  color: #fff;
+  font-family: "Kumbh Sans";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
