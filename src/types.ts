@@ -16,9 +16,9 @@ export type GeneralFiltersTypes = {
 };
 
 export type SearchFieldTypes = {
-  company?: GeneralFiltersTypes;
-  location?: string;
-  contract?: "Part Time" | "Full Time";
+  searchByTitle?: string;
+  searchByLocation?: string;
+  contractTypeCheckbox?: "Part Time" | "Full Time";
 };
 
 export type VacancyType = {

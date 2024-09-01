@@ -1,4 +1,5 @@
 import styles from "./VacancyPage.module.scss";
+import { motion } from "framer-motion";
 
 interface VacancyDescriptionProps {
   postedAt?: string;
@@ -48,9 +49,14 @@ export const VacancyDescription = ({
 
         <div className={styles.vacancyDescription_buttonContainer}>
           <a href={apply}>
-            <button className={styles.vacancyDescription_button}>
+            <motion.button
+              className={styles.vacancyDescription_button}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               Apply Now
-            </button>
+            </motion.button>
           </a>
         </div>
       </div>
