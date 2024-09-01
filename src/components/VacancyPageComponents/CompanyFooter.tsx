@@ -1,4 +1,5 @@
 import styles from "./VacancyPage.module.scss";
+import { motion } from "framer-motion";
 
 interface CompanyFooterProps {
   apply?: string;
@@ -31,12 +32,15 @@ export const CompanyFooter = ({ apply, position }: CompanyFooterProps) => {
         </div>
         <div className={styles.companyFooter_applyButton}>
           <a href={apply}>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
               className={styles.vacancyDescription_button}
               style={{ marginRight: mobileScreen ? "0" : "46px" }}
             >
               Apply Now
-            </button>
+            </motion.button>
           </a>
         </div>
       </div>
