@@ -36,3 +36,4 @@ export type VacancyType = {
   requirements: VacancyRequirements;
   role: VacancyRole;
 };
+

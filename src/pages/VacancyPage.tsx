@@ -98,3 +98,4 @@ export const VacancyPage = () => {
     </div>
   );
 };
+

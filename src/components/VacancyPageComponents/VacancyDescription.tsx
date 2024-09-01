@@ -96,3 +96,4 @@ export const VacancyDescription = ({
     </div>
   );
 };
+
