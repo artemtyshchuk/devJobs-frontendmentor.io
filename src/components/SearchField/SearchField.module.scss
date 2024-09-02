@@ -199,6 +199,10 @@
   }
 
   .searchButtonIconSearch {
+    margin: 0; /* here */
+    padding: 0; /* here */
+    display: block; /* here */
+
     path {
       fill: white;
     }
@@ -222,6 +226,9 @@
   }
 
   .searchButton {
+    display: flex; /* here */
+    align-items: center; /* here */
+    justify-content: center; /* here */
     width: 48px;
     height: 48px;
     justify-self: end;
