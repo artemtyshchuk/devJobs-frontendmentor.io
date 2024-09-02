@@ -119,13 +119,7 @@ export const SearchField = () => {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           {smallMobileScreen ? (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+            <div>
               <IconSearch className={styles.searchButtonIconSearch} />
             </div>
           ) : (
