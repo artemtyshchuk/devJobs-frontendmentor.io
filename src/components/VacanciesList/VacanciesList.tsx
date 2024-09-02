@@ -12,6 +12,20 @@ export const VacanciesList = () => {
     setVisibleCount((prevState) => prevState + 12);
   };
 
+  const noVacanciesAnimation = {
+    hidden: {
+      opacity: 0,
+      x: -20,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   const listVariants = {
     hidden: {
       opacity: 0,
@@ -31,17 +45,35 @@ export const VacanciesList = () => {
     <div className={styles.vacanciesList}>
       <div className={styles.vacanciesListContainer}>
         <AnimatePresence initial={false}>
-          {vacanciesList.slice(0, visibleCount).map((vacancy, i) => (
+          {vacanciesList.length > 0 ? (
+            vacanciesList.slice(0, visibleCount).map((vacancy, i) => (
+              <motion.div
+                key={vacancy.id}
+                custom={i}
+                variants={listVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <VacancyComponent {...vacancy} />
+              </motion.div>
+            ))
+          ) : (
             <motion.div
-              key={vacancy.id}
-              custom={i}
-              variants={listVariants}
+              variants={noVacanciesAnimation}
               initial="hidden"
               animate="visible"
             >
-              <VacancyComponent {...vacancy} />
+              <h1
+                style={{
+                  color: "#5964e0",
+                  margin: 0,
+                  fontFamily: "Kumbh Sans",
+                }}
+              >
+                No vacancies found
+              </h1>
             </motion.div>
-          ))}
+          )}
         </AnimatePresence>
       </div>
       {visibleCount < vacanciesList.length && (
@@ -58,4 +90,3 @@ export const VacanciesList = () => {
     </div>
   );
 };
-

@@ -15,9 +15,7 @@ export const useFilter = () => {
   const {
     searchByTitle: modalSearchByTitle,
     searchByLocation: modalSearchByLocation,
-  } = useAppSelector(
-    (state) => state.searchField.modalVacancies || {} 
-  );
+  } = useAppSelector((state) => state.searchField.modalVacancies || {});
 
   const activeSearchByTitle = modalSearchByTitle || mainSearchByTitle;
   const activeSearchByLocation = modalSearchByLocation || mainSearchByLocation;
@@ -26,19 +24,22 @@ export const useFilter = () => {
     return vacanciesList.filter((vacancy) => {
       const matchesContractType =
         contractData === "non-checked" || vacancy.contract === "Full Time";
-      const matchesTitle = activeSearchByTitle
+
+      const matchesSearchByTitle = activeSearchByTitle
         ? [vacancy.company, vacancy.position, vacancy.description].some(
             (field) =>
               field.toLowerCase().includes(activeSearchByTitle.toLowerCase())
           )
         : true;
-      const matchesLocation = activeSearchByLocation
+
+      const matchesSearchByLocation = activeSearchByLocation
         ? vacancy.location
             .toLowerCase()
             .includes(activeSearchByLocation.toLowerCase())
         : true;
-
-      return matchesContractType && matchesTitle && matchesLocation;
+      return (
+        matchesContractType && matchesSearchByTitle && matchesSearchByLocation
+      );
     });
   }, [
     vacanciesList,

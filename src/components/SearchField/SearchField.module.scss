@@ -199,6 +199,7 @@
   }
 
   .searchButtonIconSearch {
+    margin: 0 auto;
     path {
       fill: white;
     }
@@ -264,7 +265,7 @@
   display: grid;
   grid-template-columns: 25px 1fr;
   align-items: center;
-  column-gap: 8px;
+  column-gap: 12px;
   padding-top: 24px;
   border-top: 1px solid #00000021;
 }
