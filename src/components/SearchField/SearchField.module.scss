@@ -182,7 +182,6 @@
   }
   .checkboxContainer {
     grid-template-columns: auto auto;
-
     justify-content: space-around;
   }
   .searchFieldInput {
@@ -195,12 +194,12 @@
     grid-template-columns: 50% 50%;
 
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 30px;
   }
 
   .searchButtonIconSearch {
     path {
-      fill: yellow;
+      fill: red;
     }
   }
 
@@ -210,7 +209,8 @@
 
   .checkboxContainer {
     grid-template-columns: auto auto;
-    justify-content: space-around;
+    justify-content: end;
+    column-gap: 30px;
     grid-row: 1/2;
     grid-column: 2/3;
   }
