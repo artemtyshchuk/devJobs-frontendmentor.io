@@ -200,7 +200,7 @@
 
   .searchButtonIconSearch {
     path {
-      fill: red;
+      fill: yellow;
     }
   }
 
@@ -298,9 +298,6 @@
 }
 
 .modal_searchFieldInputCheckboxIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 3px;
   width: 24px;
   height: 24px;
