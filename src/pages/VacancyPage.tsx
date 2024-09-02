@@ -34,7 +34,7 @@ export const VacancyPage = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        delay: 0.3,
+        delay: 0.2,
       },
     },
   };
@@ -49,7 +49,7 @@ export const VacancyPage = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        delay: 0.5,
+        delay: 0.4,
       },
     },
   };

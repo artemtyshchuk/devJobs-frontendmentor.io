@@ -26,7 +26,7 @@ export const VacancyComponent = (props: VacancyComponentProps) => {
 
     setTimeout(() => {
       navigate(`/section/${id}`);
-    }, 450);
+    }, 350);
   };
 
   const cardVariants = {
