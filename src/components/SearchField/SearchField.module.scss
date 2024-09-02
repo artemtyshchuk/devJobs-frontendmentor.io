@@ -117,9 +117,9 @@
   line-height: normal;
   cursor: pointer;
 
-  &:hover {
-    background: #939bf4;
-  }
+  // &:hover {
+  //   background-color: #939bf4;
+  // }
 }
 
 .iconFilter {
@@ -344,4 +344,16 @@
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
+}
+
+@media (hover: hover) {
+  .searchButton:hover {
+    background-color: #939bf4;
+  }
+}
+
+@media (hover: none) {
+  .searchButton:not(:hover) {
+    background-color: #5964e0;
+  }
 }

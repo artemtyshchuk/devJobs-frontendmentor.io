@@ -24,14 +24,12 @@ export const useFilter = () => {
     return vacanciesList.filter((vacancy) => {
       const matchesContractType =
         contractData === "non-checked" || vacancy.contract === "Full Time";
-
       const matchesSearchByTitle = activeSearchByTitle
         ? [vacancy.company, vacancy.position, vacancy.description].some(
             (field) =>
               field.toLowerCase().includes(activeSearchByTitle.toLowerCase())
           )
         : true;
-
       const matchesSearchByLocation = activeSearchByLocation
         ? vacancy.location
             .toLowerCase()

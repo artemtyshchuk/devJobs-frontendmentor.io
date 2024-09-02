@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import styles from "./VacancyPage.module.scss";
 import { motion } from "framer-motion";
 
@@ -12,6 +13,7 @@ interface VacancyDescriptionProps {
   requirementsItems?: string[];
   roleContent?: string;
   roleItems?: string[];
+  setFooterVisible: (visible: boolean) => void
 }
 
 export const VacancyDescription = ({
@@ -25,7 +27,32 @@ export const VacancyDescription = ({
   requirementsItems,
   roleContent,
   roleItems,
+  setFooterVisible
 }: VacancyDescriptionProps) => {
+  const buttonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFooterVisible(!entry.isIntersecting);
+      },
+      { threshold: 1.0 }
+    )
+    if(buttonRef.current) {
+      observer.observe(buttonRef.current)
+    }
+
+    return() => {
+      if (buttonRef.current) {
+        observer.unobserve(buttonRef.current);
+      }
+    }
+
+  }, [setFooterVisible])
+
+
+
+
   return (
     <div className={styles.vacancyDescription_container}>
       <div className={styles.vacancyDescription_header_wrapper}>
@@ -47,7 +74,7 @@ export const VacancyDescription = ({
           </p>
         </div>
 
-        <div className={styles.vacancyDescription_buttonContainer}>
+        <div className={styles.vacancyDescription_buttonContainer} ref={buttonRef}>
           <a href={apply}>
             <motion.button
               className={styles.vacancyDescription_button}

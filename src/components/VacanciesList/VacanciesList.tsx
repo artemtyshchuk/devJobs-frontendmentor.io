@@ -29,29 +29,33 @@ export const VacanciesList = () => {
   const listVariants = {
     hidden: {
       opacity: 0,
-      y: 20,
-    },
-    visible: (custom: number) => ({
-      opacity: 1,
-      y: 0,
+      scale: 0.8,
       transition: {
-        delay: custom * 0.1,
         duration: 0.5,
+        ease: "easeOut",
       },
-    }),
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
     <div className={styles.vacanciesList}>
       <div className={styles.vacanciesListContainer}>
-        <AnimatePresence initial={false}>
+        <AnimatePresence>
           {vacanciesList.length > 0 ? (
-            vacanciesList.slice(0, visibleCount).map((vacancy, i) => (
+            vacanciesList.slice(0, visibleCount).map((vacancy) => (
               <motion.div
                 key={vacancy.id}
-                custom={i}
                 variants={listVariants}
                 initial="hidden"
+                exit="hidden"
                 animate="visible"
               >
                 <VacancyComponent {...vacancy} />

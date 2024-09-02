@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import styles from "./SearchField.module.scss";
 import { ReactComponent as IconSearch } from "assets/desktop/icon-search.svg";
 import { ReactComponent as IconLocation } from "assets/desktop/icon-location.svg";
@@ -17,10 +18,27 @@ import {
 import { motion } from "framer-motion";
 
 export const SearchField = () => {
-  const hugeTabletScreen = window.matchMedia("(max-width: 1200px)").matches;
-  const tabletScreen = window.matchMedia("(max-width: 992px)").matches;
-  const mobileScreen = window.matchMedia("(max-width: 768px)").matches;
-  const smallMobileScreen = window.matchMedia("(max-width: 576px)").matches;
+  const [screenSize, setScreenSize] = useState({
+    hugeTabletScreen: window.matchMedia("(max-width: 1200px)").matches,
+    tabletScreen: window.matchMedia("(max-width: 992px)").matches,
+    mobileScreen: window.matchMedia("(max-width: 768px)").matches,
+    smallMobileScreen: window.matchMedia("(max-width: 576px)").matches,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize({
+        hugeTabletScreen: window.matchMedia("(max-width: 1200px)").matches,
+        tabletScreen: window.matchMedia("(max-width: 992px)").matches,
+        mobileScreen: window.matchMedia("(max-width: 768px)").matches,
+        smallMobileScreen: window.matchMedia("(max-width: 576px)").matches,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const dispatch = useAppDispatch();
   const filtersModal = useAppSelector((state) => state.filtersModal);
@@ -54,21 +72,21 @@ export const SearchField = () => {
     >
       <div className={styles.searchFieldInputWrapper}>
         <label className={styles.searchFieldLabel}>
-          {smallMobileScreen ? null : <IconSearch />}
+          {screenSize.smallMobileScreen ? null : <IconSearch />}
           <input
             type="text"
             {...register("searchByTitle")}
             autoComplete="off"
             className={styles.searchFieldInput}
             placeholder={
-              tabletScreen
+              screenSize.tabletScreen
                 ? "Filter by title..."
                 : "Filter by title, companies, expertise or benefits"
             }
           />
         </label>
       </div>
-      {smallMobileScreen ? null : (
+      {screenSize.smallMobileScreen ? null : (
         <div className={styles.searchFieldInputWrapper}>
           <label className={styles.searchFieldLabel}>
             <IconLocation />
@@ -83,7 +101,7 @@ export const SearchField = () => {
         </div>
       )}
       <div className={styles.checkboxContainer}>
-        {mobileScreen ? (
+        {screenSize.mobileScreen ? (
           <IconFilter
             className={styles.iconFilter}
             onClick={handleFilterIconClick}
@@ -107,7 +125,7 @@ export const SearchField = () => {
                 onChange={handleCheckboxChange}
                 className={styles.searchFieldInputCheckboxInput}
               />
-              {hugeTabletScreen ? "Full Time" : "Full Time Only"}
+              {screenSize.hugeTabletScreen ? "Full Time" : "Full Time Only"}
             </label>
           </>
         )}
@@ -118,7 +136,7 @@ export const SearchField = () => {
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          {smallMobileScreen ? (
+          {screenSize.smallMobileScreen ? (
             <IconSearch className={styles.searchButtonIconSearch} />
           ) : (
             "Search"

@@ -4,9 +4,12 @@ import { CompanyHeader } from "components/VacancyPageComponents/CompanyHeader";
 import { VacancyDescription } from "components/VacancyPageComponents/VacancyDescription";
 import { CompanyFooter } from "components/VacancyPageComponents/CompanyFooter";
 import { useFetch } from "hooks/useFetch";
-import { delay, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 export const VacancyPage = () => {
+  const [footerVisible, setFooterVisible] = useState(false);
+
   const { data: vacancies } = useFetch();
   const params = useParams<{ vacancyId: string }>();
 
@@ -54,6 +57,9 @@ export const VacancyPage = () => {
   const footerAnimation = {
     hidden: {
       opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
     },
     visible: {
       opacity: 1,
@@ -89,12 +95,22 @@ export const VacancyPage = () => {
           requirementsItems={vacancy.requirements.items}
           roleContent={vacancy.role.content}
           roleItems={vacancy.role.items}
+          setFooterVisible={setFooterVisible}
         />
       </motion.div>
 
-      <motion.div initial="hidden" animate="visible" variants={footerAnimation}>
-        <CompanyFooter apply={vacancy.apply} position={vacancy.position} />
-      </motion.div>
+      <AnimatePresence>
+        {footerVisible && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={footerAnimation}
+          >
+            <CompanyFooter apply={vacancy.apply} position={vacancy.position} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
