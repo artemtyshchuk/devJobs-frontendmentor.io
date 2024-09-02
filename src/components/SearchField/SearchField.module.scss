@@ -182,6 +182,7 @@
   }
   .checkboxContainer {
     grid-template-columns: auto auto;
+
     justify-content: space-around;
   }
   .searchFieldInput {
@@ -199,7 +200,7 @@
 
   .searchButtonIconSearch {
     path {
-      fill: red;
+      fill: white;
     }
   }
 
@@ -221,7 +222,6 @@
   }
 
   .searchButton {
-    margin: 0 auto;
     width: 48px;
     height: 48px;
     justify-self: end;
@@ -298,6 +298,9 @@
 }
 
 .modal_searchFieldInputCheckboxIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 3px;
   width: 24px;
   height: 24px;
