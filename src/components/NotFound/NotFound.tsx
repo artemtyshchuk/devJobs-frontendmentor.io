@@ -2,9 +2,8 @@ import { useEffect, useRef } from "react";
 import styles from "./NotFound.module.scss";
 import notFound from "assets/desktop/error-404.png";
 
-interface NotFoundProps {}
 
-export const NotFound = ({}: NotFoundProps) => {
+export const NotFound = () => {
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
@@ -37,15 +36,16 @@ export const NotFound = ({}: NotFoundProps) => {
   }, []);
 
   return (
-    <div className={styles.notFound}>
+    <div className={styles.notFound} data-testid="notFoundComponent">
       <div className={styles.textWrapper}>
-        <p className={styles.text}>{`Page not found :)`}</p>
+        <p className={styles.text} data-testid="notFoundText">{`Page not found :)`}</p>
       </div>
       <img
         ref={imgRef}
         src={notFound}
         alt="not found icon"
         className={styles.image}
+        data-testid="notFoundImage"
       />
     </div>
   );

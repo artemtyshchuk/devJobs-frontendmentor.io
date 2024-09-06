@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VacancyPage should render Company Header correctly 1`] = `
+<div
+  class="companyHeader"
+  data-testid="companyHeader"
+>
+  <div
+    class="companyHeader_logoContainer"
+  >
+    <img
+      alt="company logo"
+      data-testid="companyLogo"
+    />
+  </div>
+  <div
+    class="companyHeader_companyInfoContainer"
+  >
+    <p
+      class="companyHeader_companyName"
+    >
+      company
+    </p>
+    <p
+      class="companyHeader_companyWebsite"
+    >
+      website
+    </p>
+  </div>
+  <div
+    class="companyHeader_companySiteContainer"
+  >
+    <a
+      data-testid="companyWebsite"
+      href="website"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <button
+        class="companyHeader_companySiteButton"
+        data-testid="headerButton"
+      >
+        Company Site
+      </button>
+    </a>
+  </div>
+</div>
+`;

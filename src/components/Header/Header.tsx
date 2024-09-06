@@ -7,7 +7,7 @@ interface HeaderProps {}
 
 export const Header = ({}: HeaderProps) => {
   return (
-    <div className={styles.header}>
+    <div className={styles.header} data-testid="header">
       <div className={styles.container}>
         <Link to="/">
           <div className={styles.logoWrapper}>

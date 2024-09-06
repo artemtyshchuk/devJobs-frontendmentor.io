@@ -42,6 +42,7 @@ export const VacancyComponent = (props: VacancyComponentProps) => {
       initial="visible"
       animate={!isExiting ? "visible" : "exit"}
       onClick={handleCardClick}
+      data-testid="vacancyCard"
     >
       <div
         className={styles.logoBackground}

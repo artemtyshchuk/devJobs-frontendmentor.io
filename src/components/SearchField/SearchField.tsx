@@ -67,8 +67,8 @@ export const SearchField = () => {
   return (
     <form
       className={styles.searchField}
-      data-testid="searchField"
       onSubmit={handleSubmit(onSubmitForm)}
+      data-testid="searchField"
     >
       <div className={styles.searchFieldInputWrapper}>
         <label className={styles.searchFieldLabel}>
@@ -83,6 +83,7 @@ export const SearchField = () => {
                 ? "Filter by title..."
                 : "Filter by title, companies, expertise or benefits"
             }
+            data-testid="titleInput"
           />
         </label>
       </div>
@@ -96,6 +97,7 @@ export const SearchField = () => {
               {...register("searchByLocation")}
               className={styles.searchFieldInput}
               placeholder="Filter by location…"
+              data-testid="locationInput"
             />
           </label>
         </div>
@@ -105,6 +107,7 @@ export const SearchField = () => {
           <IconFilter
             className={styles.iconFilter}
             onClick={handleFilterIconClick}
+            data-testid="filterIcon"
           />
         ) : (
           <>
@@ -124,6 +127,7 @@ export const SearchField = () => {
                 checked={dataContractType === "checked"}
                 onChange={handleCheckboxChange}
                 className={styles.searchFieldInputCheckboxInput}
+                data-testid="fullTimeCheckbox"
               />
               {screenSize.hugeTabletScreen ? "Full Time" : "Full Time Only"}
             </label>
@@ -135,6 +139,7 @@ export const SearchField = () => {
           className={styles.searchButton}
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          data-testid="searchButton"
         >
           {screenSize.smallMobileScreen ? (
             <IconSearch className={styles.searchButtonIconSearch} />

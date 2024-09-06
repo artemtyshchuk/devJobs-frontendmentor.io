@@ -55,6 +55,7 @@ export const SearchFieldModal = () => {
       initial="hidden"
       animate="visible"
       variants={modalAnimation}
+      data-testid="modal"
     >
       <div className={styles.modal_SearchFieldModalConteiner}>
         <div className={styles.modal_searchFieldInputWrapper}>
@@ -67,6 +68,7 @@ export const SearchFieldModal = () => {
             autoComplete="off"
             className={styles.modal_searchFieldInput}
             placeholder="Filter by location…"
+            data-testid="modal_searchByLocation"
           />
         </div>
         <div className={styles.modal_checkboxFieldInputWrapper}>
@@ -86,11 +88,16 @@ export const SearchFieldModal = () => {
               checked={dataContactType === "checked"}
               onChange={handleCheckboxChange}
               className={styles.modal_searchFieldInputCheckboxInput}
+              data-testid="modal_checkboxInput"
             />
             Full Time Only
           </label>
         </div>
-        <button type="submit" className={styles.modal_searchButton}>
+        <button
+          type="submit"
+          className={styles.modal_searchButton}
+          data-testid="modal_searchButton"
+        >
           Search
         </button>
       </div>

@@ -3,9 +3,7 @@ import { ReactComponent as IconMoon } from "assets/desktop/icon-moon.svg";
 import { ReactComponent as IconSun } from "assets/desktop/icon-sun.svg";
 import styles from "./ThemeSwitcher.module.scss";
 
-interface ThemeSwitcherProps {}
-
-export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
+export const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<boolean>(
     localStorage.getItem("theme") === "dark"
   );
@@ -21,7 +19,7 @@ export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
   };
 
   return (
-    <div className={styles.themeSwitcherWrapper}>
+    <div className={styles.themeSwitcherWrapper} data-testid="themeSwitcher">
       <div className={styles.themeIconWrapper}>
         <IconSun className={styles.themeIcon} />
       </div>
@@ -32,6 +30,7 @@ export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
             className={styles.input}
             checked={theme}
             onChange={handleTheme}
+            data-testid="checkbox"
           />
           <span className={styles.slider}></span>
         </label>

@@ -46,7 +46,7 @@ export const VacanciesList = () => {
   };
 
   return (
-    <div className={styles.vacanciesList}>
+    <div className={styles.vacanciesList} data-testid="vacanciesList">
       <div className={styles.vacanciesListContainer}>
         <AnimatePresence>
           {vacanciesList.length > 0 ? (
@@ -57,6 +57,7 @@ export const VacanciesList = () => {
                 initial="hidden"
                 exit="hidden"
                 animate="visible"
+                data-testid="vacancyComponent"
               >
                 <VacancyComponent {...vacancy} />
               </motion.div>
@@ -72,7 +73,9 @@ export const VacanciesList = () => {
                   color: "#5964e0",
                   margin: 0,
                   fontFamily: "Kumbh Sans",
+                
                 }}
+                data-testid="noVacanciesFound"
               >
                 No vacancies found
               </h1>
